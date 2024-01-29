@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: myweb-service
+  labels:
+    svc: myweb-service
+  namespace: myfirstapp
+spec:
+  selector: 
+    app.kubernetes.io/name: myweb
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

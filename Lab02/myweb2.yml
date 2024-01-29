@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myweb
+  labels:
+    app: myweb
+  namespace: myfirstapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb
+  template:
+    metadata:
+      labels:
+        app: myweb
+        app.kubernetes.io/name: myweb
+    spec:
+      containers:
+      - name: myweb
+        image: nginx
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "300Mi"
+          limits:
+            memory: "1Gi"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        volumeMounts:
+        - name: nginx-index-file
+          mountPath: "/usr/share/nginx/html/"
+      volumes:
+      - name: nginx-index-file
+        configMap:
+          name: index-html-configmap
