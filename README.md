@@ -13,3 +13,5 @@ These labs are intended for instructor lead training, but can be used on your ow
 - [Lab 2C - Kubernetes Fundamentals (OPTIONAL) Using ConfigMaps](Lab02c.md)
 - [Lab 3 - Helm](Lab03.md)
   - [Examples](Lab03)
+- [Extra Labs](MoreLabs.md)
+- [Practice on your own computer](OnYourOwn.md)
