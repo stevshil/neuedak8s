@@ -69,6 +69,8 @@ Try the following, as it should work with no other options:
 minikube start --memory 4096 --kubernetes-version=latest
 ```
 
+**NOTE:** if you find issues with ingress controllers failing to run, or tunneling not working (you'll see these later), then increase the **4096** to **8192**.  The only reason you would need to do this is if you've tried launching lots of containers or memory hungry applications on the server.  These labs have been tested and all work with 4096.
+
 If the above returns an error try:
 
 ```bash

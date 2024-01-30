@@ -1,5 +1,9 @@
 # Continue Practicing
 
+> &#x26a0;&#xfe0f; **NOTE:** Do **NOT** do any of this on company equipment.  Make sure you are using your own computer, and are happy to install the software.
+
+> &#x26a0;&#xfe0f; **Disclaimer:** We do not take any responsiblity for damage to equipment or systems going wrong.  You follow these instructions at your own risk.
+
 You don't need a big environment to practice using Kuberentes.
 
 Here's what you need:
