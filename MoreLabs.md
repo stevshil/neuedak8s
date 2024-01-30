@@ -22,7 +22,7 @@ The API documentation detail for attributes in the YAML manifest start at [https
 
 ## Alternative deployments
 
-### Statefule sets
+### Stateful sets
 
 1. Create a stateful set
     - [https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/statefulset.html](https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/statefulset.html)
