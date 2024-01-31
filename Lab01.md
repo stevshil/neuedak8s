@@ -108,14 +108,19 @@ If you are working with multiple servers you may have multiple files, or a singl
 The file is located in your home directory.
 
 1. Run the following command to list the credentials file directory content:
+
     ```bash
     ls ~/.kube
     ```
+
     NOTE: The output will be:
+
     ```
     cache config
     ```
+
 2. **config** is the file we are interested in, so let's take a look inside. Run the following command:
+
     ```bash
     less ~/.kube/config
     ```
@@ -138,10 +143,13 @@ The file is located in your home directory.
     ```
 
     The **name:** is the values that can be provided to change the Kubernetes cluster you wish to work with.
+
 3. You can change your cluster by using the following command:
+
     ```bash
     kubectl config --kubeconfig=$HOME/.kube/config use-context minikube
     ```
+
     Where **minikube** after **use-context** is changed to the name of the cluster context you want to connect.
 
     The **--kubeconfig=** specifies the name of the file containing the contexts.
@@ -151,7 +159,9 @@ The file is located in your home directory.
     ```
     Switched to context "minikube".
     ```
+
 4. Try running the following:
+   
     ```bash
     kubectl config --kubeconfig=$HOME/.kube/config use-context dev
     ```
@@ -164,6 +174,7 @@ The file is located in your home directory.
 It is also possible that if you're using a single file you can set a shell variable called **KUBECONFIG**.  The value of the shell variable is the absolute path to the file containing the contexts.
 
 1. Let's try changing the variable.  First let's try a file that does not exist:
+
     ```bash
     KUBECONFIG=/broken/config
     export KUBECONFIG
@@ -180,7 +191,9 @@ It is also possible that if you're using a single file you can set a shell varia
     W0129 17:30:23.159941   59036 loader.go:222] Config not found: /broken/config
     E0129 17:30:23.167034   59036 memcache.go:238] couldn't get current server API group list: Get "http://localhost:8080/api?timeout=32s": dial tcp 127.0.0.1:8080: connect: connection refused
     ```
+    
 2. Let's now set the variable to the valid configuration file:
+
     ```bash
     KUBECONFIG=$HOME/.kube/config
     echo $KUBECONFIG
@@ -197,7 +210,9 @@ It is also possible that if you're using a single file you can set a shell varia
     NAME       STATUS   ROLES           AGE   VERSION
     minikube   Ready    control-plane   30m   v1.26.1
     ```
+
 3. We can also unset the variable as it will default to **$HOME/.kube/config**
+
     ```bash
     unset KUBECONFIG
     echo $KUBECONFIG
@@ -211,6 +226,7 @@ It is also possible that if you're using a single file you can set a shell varia
 Let's take a quick look around what's in our Kubernetes mini cluster.
 
 1. We've already seen how to view the nodes (hosts) that make up the cluster and run all the containers and manage the environments:
+
     ```bash
     kubectl get nodes
     ```
@@ -227,7 +243,9 @@ Let's take a quick look around what's in our Kubernetes mini cluster.
     We can see the name given to the cluster, and the **ROLE** given to the node.  Since we are only running a single node cluster we only see a **control-plane**.  This is acting as both the manager of the cluster and the **worker** node.
 
     Worker nodes are where your applications will run.
+
 2. If we want to see more detailed information about a resource by changing **get** to **describe**.
+
     ```bash
     kubectl describe nodes
     ```
@@ -241,7 +259,9 @@ Let's take a quick look around what's in our Kubernetes mini cluster.
     - Events.  These are like looking at log files and tell you what is happening on the nodes and what Kubernetes is doing.
 
     We'll look more at these commands later and see how they change when we look at different resources.
+
 3. Let's get more detail, but in YAML format, to see what the node configuration looks like in Kubernetes code, called a manifest.
+
     ```bash
     kubectl get nodes minikube -o yaml
     ```

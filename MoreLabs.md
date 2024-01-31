@@ -25,14 +25,18 @@ The API documentation detail for attributes in the YAML manifest start at [https
 ### Stateful sets
 
 1. Create a stateful set
+
     - [https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/statefulset.html](https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/statefulset.html)
     - Modifications required to StatefulSet YAML file
+
         ```yaml
         apiVersion: apps/v1
         ```
         
         Not v1beta1
+
     - Under the first **spec** section add
+
         ```yaml
         selector:
             matchLabels:
@@ -44,9 +48,11 @@ The API documentation detail for attributes in the YAML manifest start at [https
 ### Scaling
 
 1. All about scaling, including manual
+
     - [https://bluexp.netapp.com/blog/cvo-blg-kubernetes-scaling-the-comprehensive-guide-to-scaling-apps](https://bluexp.netapp.com/blog/cvo-blg-kubernetes-scaling-the-comprehensive-guide-to-scaling-apps)
 
 2. Autoscaling
+
     - Horizontal Pod Autoscaling (HPA)
       - [https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
     - Scaling Statefulsets
@@ -61,23 +67,29 @@ The API documentation detail for attributes in the YAML manifest start at [https
 ### Secrets
 
 1. Working with secrets and using in a container
+
     - [https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/secrets.html](https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/secrets.html)
 
 2. Creating secrets and using secrets in a container
+
     - [https://spacelift.io/blog/kubernetes-secrets](https://spacelift.io/blog/kubernetes-secrets)
 
 ## Storage
 
 1. Persistent volumes, 2 containers sharing storage
+
     - [https://kubernetes.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/](https://kubernetes.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/)
 
 2. Set up a Persistent Volume and assign to a Pod
+
     - [https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/)
 
 ## Security
 
 1. Pod securityContext
+
     - [https://kubernetes.io/docs/tasks/configure-pod-container/security-context/](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 
 2. Service Accounts
+
     - [https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/)

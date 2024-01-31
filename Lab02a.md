@@ -43,6 +43,7 @@ Let's create a namespace called **myfirstapp**.  Note the namespace must be all 
     ```
 
     The key lines are:
+
     - apiVersion: v1
     - This defines what version of the API we are working to in our file syntax
     - kind: Namespace
@@ -53,11 +54,13 @@ Let's create a namespace called **myfirstapp**.  Note the namespace must be all 
     To create the namespace we will use a text editor called **nano** to add the text to the file.
 
    * Run the following command to enter the text editor:
+   * 
        ```bash
        nano myfirstapp.yml
        ```
    * You will now be in **nano**, where the bottom of the screen shows actions which can be accessed by pressing the **CTRL** key and the letter or character following the **^** symbol.  For example **CTRL G** will get help on nano, and the menu will change. **CTRL X** will quit the help and put you back to the text editor.
    * Type in the code:
+
        ```yaml
        apiVersion: v1
        kind: Namespace
@@ -70,6 +73,7 @@ Let's create a namespace called **myfirstapp**.  Note the namespace must be all 
        NOTE: Make sure you only use spaces.  The above uses 2 spaces for each indent.
 
        This file exists in the Lab02 folder.
+
    * Save the file by pressing **CTRL X**
    * Press Y to accept the save
    * Press **ENTER** to accept the file name of **myfirstapp.yml**
@@ -100,6 +104,7 @@ Let's create a namespace called **myfirstapp**.  Note the namespace must be all 
     If you do not run the **apply** command again.
 
 4. What happens if you run this command again:
+
     ```bash
     kubectl apply -f myfirstapp.yml
     ```
@@ -107,23 +112,32 @@ Let's create a namespace called **myfirstapp**.  Note the namespace must be all 
     Kubernetes is **idempotent**, and will only update the configuration if something has changed.  The word **unchanged** let's us know there is no difference between our code and the Kubernetes system.
 
 5. Let's edit the namespace file and add an extra label and apply it.
+
     * Open the file:
+
         ```bash
         nano myfirstapp.yml
         ```
+
     * After the last line and at the same level of indentation for the **name** label add the following:
+
         ```yaml
         app: myapp
         ```
+
     * Save the file by pressing **CTRL X**, **Y**, **ENTER**
     * Apply the change:
+
         ```bash
         kubectl apply -f myfirstapp.yml
         ```
+
     * You will see the following to let you know it updated:
+
         ```
         namespace/myfirstapp configured
         ```
+        
         The **configured** word let's us know it has been applied and changed.
 
 ### Namespaces using the command

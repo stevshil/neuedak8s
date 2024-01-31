@@ -9,6 +9,7 @@ In this lab you will:
 ## Install Helm
 
 1. Make sure you are SSH'd on to your AWS EC2 Instance.
+
     ```bash
     ssh student@mskube1.neueda.me
     ```

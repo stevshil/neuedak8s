@@ -22,7 +22,7 @@ Using our **myfirstapp** namespace created in the previous lab, we will create 3
     nano myweb.yml
     ```
 3. In that file we will add the following content:
-4. 
+
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -76,13 +76,13 @@ Using our **myfirstapp** namespace created in the previous lab, we will create 3
     - image: nginx
       - This is the image from [https://hub.docker.com](https://hub.docker.com) that we will use
     - The **resources:** section allows us to add some checks to determine if the container has started and whether it is still alive and has not used too much memory.  This is optional, but is good practice to include especially in production environments to prevent applications running away with all the CPU and memory, and to restart containers if they die.
-    - 
-5. Let's launch this container configuration.
+
+4. Let's launch this container configuration.
 
     ```bash
     kubectl apply -f myweb.yml
     ```
-6. Check that it starts
+5. Check that it starts
 
     ```bash
     kubectl get all -n myfirstapp
@@ -124,12 +124,13 @@ You will need to press **CTRL C** to quit the follow.
 Now we need to be able to target our service, and make it scalable.  Here we will create the **Service** configuration.
 
 1. Create a new text file as follows:
-2. 
+
     ```bash
     nano mywebservice.yml
     ```
 
-3. In this file add the following:
+2. In this file add the following:
+
     ```yaml
     apiVersion: v1
     kind: Service
@@ -155,14 +156,14 @@ Now we need to be able to target our service, and make it scalable.  Here we wil
 
     All containers within this namespace will be able to access this service using the **name:** myweb-service as though it was a hostname.
 
-4. Let's now launch the service:
-5. 
+3. Let's now launch the service:
+
     ```bash
     kubectl apply -f mywebservice.yml
     ```
 
-6. Check it worked
-7. 
+4. Check it worked
+
     ```bash
     kubectl get services -n myfirstapp
     ```
@@ -223,13 +224,13 @@ The name we'll be giving the application will be:
 **myweb.mskube1.neueda.me**
 
 1. Create a new file as follows:
-2. 
+
     ```bash
     nano mywebingress.yml
     ```
 
-3. In this file add the following:
-4. 
+2. In this file add the following:
+
     ```yaml
     apiVersion: networking.k8s.io/v1
     kind: Ingress
@@ -272,13 +273,13 @@ The name we'll be giving the application will be:
     - service:
       - This links the ingress rule to your service by name and port
 
-5. Apply the ingress rule:
+3. Apply the ingress rule:
     
     ```bash
     kubectl apply -f mywebingress.yml
     ```
 
-6. Check the ingress has been created:
+4. Check the ingress has been created:
 
     ```bash
     kubectl get ingress -n myfirstapp

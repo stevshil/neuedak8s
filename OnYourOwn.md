@@ -19,11 +19,13 @@ Here's what you need:
 Run the following commands:
 
 1. Download minikube executable
+
     ```bash
         curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     ```
 
 2. Move it to a known locaiton
+
     ```bash
     sudo install minikube-linux-amd64 /usr/local/bin/minikube
     ```

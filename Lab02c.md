@@ -34,7 +34,6 @@ A ConfigMap allows you to create variables or file data that can be updated.  In
             <html>
             <h1>Ye Ha! Looks like you found my Kube webpage!</h1>
             </br>
-            </html
             <h1>This web page is housed on a Pod running Nginx</h1>
             </html>
     ```
@@ -66,6 +65,7 @@ A ConfigMap allows you to create variables or file data that can be updated.  In
     You can use **decribe** to see the content within the map.
 
 ## Modifying the application
+
 1. Use **nano** to create a new file myweb2.yml.
 
     ```bash
