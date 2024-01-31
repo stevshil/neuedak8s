@@ -78,7 +78,7 @@ Let's create a namespace called **myfirstapp**.  Note the namespace must be all 
 2. Now we need to apply the namespace to our cluster.  Run the following command to do that:
 
     ```bash
-    kubectl -f myfirstapp.yml
+    kubectl apply -f myfirstapp.yml
     ```
 
     This will return:
